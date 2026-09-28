@@ -16,12 +16,13 @@ public class DeleteEmployee {
             Connection connection = DBConnection.getConnection();
 
             PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setDouble(1, 75000);
+            ps.setInt(1 , 2);
 
-            ps.setInt(1, 2);  // employee_id = 2
 
             int rows = ps.executeUpdate();
 
-            System.out.println(rows + " employee deleted.");
+            System.out.println(rows + " employee updated.");
 
             ps.close();
             connection.close();
